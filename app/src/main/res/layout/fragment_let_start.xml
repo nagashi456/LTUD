@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@drawable/bg">
+
+    <!-- Ảnh minh họa -->
+    <ImageView
+        android:id="@+id/imgIllustration"
+        android:layout_width="370dp"
+        android:layout_height="370dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/images" />
+
+    <!-- Tiêu đề -->
+
+    <!-- Nội dung mô tả -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:fontFamily="@font/jockey_one"
+        android:gravity="center"
+        android:text="Learning management"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="258dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/lexend_deca"
+        android:gravity="center"
+        android:text="This effective tool is designed to\nHelps you manage work based on project in a more convenient way!"
+        android:textColor="#6E6A7C"
+        android:textSize="16sp" />
+
+    <!-- Nút bắt đầu -->
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="304dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#46BDF0"
+        android:fontFamily="@font/inter_bold"
+        android:text="Let’s Start"
+        android:textColor="@android:color/white"
+        android:textSize="20sp" />
+</LinearLayout>
