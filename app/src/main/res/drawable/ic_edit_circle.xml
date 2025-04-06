@@ -1,0 +1,31 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Vòng tròn vừa phải (r = 10, center = 12,12) -->
+    <path
+        android:fillColor="#E30613"
+        android:pathData="M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z" />
+
+    <group
+        android:scaleX="0.65"
+        android:scaleY="0.65"
+        android:translateX="4.2"
+        android:translateY="4.2">
+
+        <!-- Cây bút -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M3,17.25V21h3.75L17.81,9.94l-3.75-3.75L3,17.25z" />
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M20.71,7.04c0.39,-0.39 0.39,-1.02 0,-1.41l-2.34,-2.34a.9959.9959 0 0,0 -1.41,0l-1.83,1.83 3.75,3.75 1.83,-1.83z" />
+
+        <!-- Gạch chân to vừa -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M4,22h16v2H4z" />
+    </group>
+</vector>
