@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/letStartFragment">
+
+    <fragment
+        android:id="@+id/letStartFragment"
+        android:name="org.o7planning.a48k141_03_duan_quanlyhoctap.Start.LetStartFragment"
+        android:label="Let Start">
+        <action
+            android:id="@+id/action_letStartFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="org.o7planning.a48k141_03_duan_quanlyhoctap.login.LoginFragment"
+        android:label="Login" >
+        <action
+            android:id="@+id/action_loginFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="org.o7planning.a48k141_03_duan_quanlyhoctap.login.ForgetPasswordFragment"
+        android:label="Forget Password">
+
+        <action
+            android:id="@+id/action_forgetPasswordFragment_to_otpVerificationFragment"
+            app:destination="@id/otpVerificationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/otpVerificationFragment"
+        android:name="org.o7planning.a48k141_03_duan_quanlyhoctap.login.OtpVerificationFragment"
+        android:label="OTP Verification">
+        <action
+            android:id="@+id/action_otpVerificationFragment_to_forgetPasswordFragment"
+            app:destination="@id/forgetPasswordFragment" />
+
+        <action
+            android:id="@+id/action_otpVerificationFragment_to_setNewPasswordFragment"
+            app:destination="@id/setNewPasswordFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/setNewPasswordFragment"
+        android:name="org.o7planning.a48k141_03_duan_quanlyhoctap.login.SetNewPasswordFragment"
+        android:label="Set New Password">
+        <action
+            android:id="@+id/action_setNewPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
