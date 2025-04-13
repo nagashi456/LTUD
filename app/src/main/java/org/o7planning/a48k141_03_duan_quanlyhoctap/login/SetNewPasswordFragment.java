@@ -14,6 +14,8 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.o7planning.a48k141_03_duan_quanlyhoctap.R;
 
 public class SetNewPasswordFragment extends Fragment {
@@ -24,11 +26,23 @@ public class SetNewPasswordFragment extends Fragment {
 
     private boolean isNewPasswordVisible = false;
     private boolean isConfirmPasswordVisible = false;
+    private FirebaseAuth mAuth;
+
+    // OTP và email từ OtpVerificationFragment
+    private String email;
+    private String otp;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mAuth = FirebaseAuth.getInstance(); // Khởi tạo FirebaseAuth
         View view = inflater.inflate(R.layout.fragment_set_new_password, container, false);
+
+        // Lấy email và OTP từ Bundle
+        if (getArguments() != null) {
+            email = getArguments().getString("email");
+            otp = getArguments().getString("otp");
+        }
 
         // Ánh xạ view
         newPasswordEditText = view.findViewById(R.id.new_password_edit_text);
@@ -44,7 +58,7 @@ public class SetNewPasswordFragment extends Fragment {
         // Xử lý khi nhấn Next
         nextButton.setOnClickListener(v -> {
             if (validatePassword()) {
-                showCustomSnackbarAndNavigate();
+                updatePassword();
             }
         });
 
@@ -90,6 +104,20 @@ public class SetNewPasswordFragment extends Fragment {
         }
 
         return true;
+    }
+
+    private void updatePassword() {
+        String newPassword = newPasswordEditText.getText().toString().trim();
+
+        // Sử dụng mã OTP và email để cập nhật mật khẩu
+        mAuth.confirmPasswordReset(otp, newPassword)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        showCustomSnackbarAndNavigate();
+                    } else {
+                        Toast.makeText(getContext(), "Failed to reset password. Try again.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void showCustomSnackbarAndNavigate() {

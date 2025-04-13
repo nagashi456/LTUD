@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
-    tools:context=".login.LoginFragment">
+    android:background="@drawable/bg">
 
     <!-- Logo -->
 
@@ -30,7 +28,7 @@
         android:id="@+id/welcome_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/jockey_one"
         android:text="Welcome Back!"
         android:textColor="@color/black"
@@ -43,15 +41,16 @@
 
     <TextView
         android:id="@+id/sign_in_subtitle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="3dp"
         android:fontFamily="@font/inter_medium"
-        android:text="Sign in to continue"
+        android:text="Sign up to continue"
         android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome_text" />
 
@@ -125,133 +124,55 @@
                         android:layout_marginEnd="20dp"
                         android:src="@drawable/gray_dot" />
                 </RelativeLayout>
+
             </androidx.cardview.widget.CardView>
 
-            <!-- Password Label -->
             <TextView
-                android:id="@+id/password_label"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:fontFamily="@font/inter_medium"
-                android:text="Password"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/email_card" />
-
-            <!-- Password Input -->
-            <androidx.cardview.widget.CardView
-                android:id="@+id/password_card"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:cardCornerRadius="25dp"
-                app:cardElevation="0dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password_label">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:background="@drawable/edit_text_background">
-
-                    <EditText
-                        android:id="@+id/password_edit_text"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@null"
-                        android:hint="Enter your password"
-                        android:inputType="textPassword"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="50dp"
-                        android:textColor="@color/black"
-                        android:textColorHint="#303030" />
-
-                    <ImageView
-                        android:id="@+id/password_toggle"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:layout_alignParentEnd="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginEnd="16dp"
-                        android:src="@drawable/ic_visibility_off" />
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
-
-            <!-- Remember & Forgot -->
-            <CheckBox
-                android:id="@+id/remember_me_checkbox"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:button="@drawable/checkbox_selector"
-                android:fontFamily="@font/poppins_medium"
-                android:text="Remember me"
-                android:textColor="@color/black"
-                android:textSize="12sp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password_card" />
-
-            <!-- Sign In -->
-
-            <TextView
-                android:id="@+id/forgot_password_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
-                android:fontFamily="@font/inter_semibold"
-                android:text="Forgot password?"
-                android:textColor="#303030"
-                android:textSize="12sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/password_card" />
-
-            <TextView
-                android:id="@+id/sign_in_button"
+                android:id="@+id/button_next"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="30dp"
                 android:background="@drawable/button_background"
                 android:gravity="center"
-                android:text="Sign in"
+                android:text="Next"
                 android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/remember_me_checkbox" />
-
-            <!-- Create Account -->
+                app:layout_constraintTop_toBottomOf="@id/email_card" />
 
             <TextView
-                android:id="@+id/no_account_text"
+                android:id="@+id/have_account_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="28dp"
                 android:fontFamily="@font/inter_bold"
-                android:text="Not registered yet?"
+                android:text="Have an account?"
                 android:textColor="#303030"
                 android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@id/create_account_text"
+                app:layout_constraintEnd_toStartOf="@id/have_account_text"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/sign_in_button" />
+                app:layout_constraintTop_toBottomOf="@id/button_next" />
 
             <TextView
-                android:id="@+id/create_account_text"
+                android:id="@+id/sign_in"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginRight="95dp"
                 android:fontFamily="@font/inter_bold"
-                android:text="Create an account"
+                android:text="Sign in"
                 android:textColor="#FFA393"
                 android:textSize="16sp"
-                app:layout_constraintBaseline_toBaselineOf="@id/no_account_text"
+                app:layout_constraintBaseline_toBaselineOf="@id/have_account_text"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/no_account_text" />
+                app:layout_constraintStart_toEndOf="@id/have_account_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

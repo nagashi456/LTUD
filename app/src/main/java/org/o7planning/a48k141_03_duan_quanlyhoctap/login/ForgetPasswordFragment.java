@@ -20,6 +20,8 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import org.o7planning.a48k141_03_duan_quanlyhoctap.R;
 
 public class ForgetPasswordFragment extends Fragment {
@@ -28,10 +30,13 @@ public class ForgetPasswordFragment extends Fragment {
     private TextView countdownText, sendCodeButton, resendCodeButton;
     private ImageView emailStatusDot;
     private CountDownTimer countDownTimer;
+    private FirebaseAuth mAuth;
+
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mAuth = FirebaseAuth.getInstance(); // Khởi tạo FirebaseAuth
         return inflater.inflate(R.layout.fragment_forget_password, container, false);
     }
 
@@ -75,15 +80,23 @@ public class ForgetPasswordFragment extends Fragment {
             return;
         }
 
-        Toast.makeText(getContext(), "Code sent to " + email, Toast.LENGTH_SHORT).show();
-        startCountdown();
+        // Gửi mã OTP qua email sử dụng Firebase
+        mAuth.sendPasswordResetEmail(email)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getContext(), "Reset password email sent.", Toast.LENGTH_SHORT).show();
+                        startCountdown();
 
-        // Gửi email sang OTP Fragment bằng Bundle
-        Bundle bundle = new Bundle();
-        bundle.putString("email", email);
+                        // Gửi email sang OTP Fragment
+                        Bundle bundle = new Bundle();
+                        bundle.putString("email", email);
 
-        NavController navController = NavHostFragment.findNavController(this);
-        navController.navigate(R.id.action_forgetPasswordFragment_to_otpVerificationFragment, bundle);
+                        NavController navController = NavHostFragment.findNavController(this);
+                        navController.navigate(R.id.action_forgetPasswordFragment_to_otpVerificationFragment, bundle);
+                    } else {
+                        Toast.makeText(getContext(), "Failed to send email. Try again.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
     private void startCountdown() {

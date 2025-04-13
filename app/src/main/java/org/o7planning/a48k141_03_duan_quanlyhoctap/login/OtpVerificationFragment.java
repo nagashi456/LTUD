@@ -23,6 +23,7 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.o7planning.a48k141_03_duan_quanlyhoctap.R;
 
@@ -38,6 +39,8 @@ public class OtpVerificationFragment extends Fragment {
 
     private String email;
     private ImageView backButton;
+    private FirebaseAuth mAuth;
+
 
     public OtpVerificationFragment() {}
 
@@ -52,6 +55,7 @@ public class OtpVerificationFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        mAuth = FirebaseAuth.getInstance(); // Khởi tạo FirebaseAuth
         return inflater.inflate(R.layout.fragment_otp_verification, container, false);
     }
 
@@ -111,24 +115,25 @@ public class OtpVerificationFragment extends Fragment {
         });
 
         verifyButton.setOnClickListener(v -> {
-            if (getEnteredOtp().length() < 4) {
+            String enteredOtp = getEnteredOtp();
+            if (enteredOtp.length() != 4) {
                 highlightEmptyFields();
-                Toast.makeText(getContext(), "Please enter all OTP digits", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Please enter a 6-digit OTP", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            String otp = getEnteredOtp();
-            // TODO: Call API to verify OTP here
-
-            Toast.makeText(getContext(), "Verifying OTP: " + otp, Toast.LENGTH_SHORT).show();
-            // Ví dụ điều hướng thành công sau xác thực:
-            // NavHostFragment.findNavController(this).navigate(R.id.action_otpVerificationFragment_to_resetPasswordFragment);
-
-            NavHostFragment.findNavController(OtpVerificationFragment.this)
-                    .navigate(R.id.action_otpVerificationFragment_to_setNewPasswordFragment);
-
-
+            mAuth.verifyPasswordResetCode(enteredOtp)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            // Mã hợp lệ => chuyển sang fragment đặt mật khẩu mới
+                            NavHostFragment.findNavController(OtpVerificationFragment.this)
+                                    .navigate(R.id.action_otpVerificationFragment_to_setNewPasswordFragment);
+                        } else {
+                            Toast.makeText(getContext(), "Invalid OTP. Please try again.", Toast.LENGTH_SHORT).show();
+                        }
+                    });
         });
+
 
         startCountdownTimer();
     }
