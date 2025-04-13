@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "859642308282",
+    "project_id": "k141-03-duan-quanlyhoctap",
+    "storage_bucket": "k141-03-duan-quanlyhoctap.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:859642308282:android:6893fd39ebe2b4dbf44483",
+        "android_client_info": {
+          "package_name": "org.o7planning.a48k141_03_duan_quanlyhoctap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAh_U8mLzL914mTxJabEUxikf3CM9HYI_s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
