@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f1f0e8"
+    android:orientation="vertical">
+
+    <!-- Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="back"
+            android:src="@drawable/ic_back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="background_image"
+            android:textColor="#38383a"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Step indicator -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Step_2_2"
+        android:textColor="#38383a"
+        android:textSize="18sp" />
+
+    <!-- Image placeholder -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/imagePreviewContainer"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/cricle_white">
+
+            <ImageView
+                android:id="@+id/imagePreview"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:background="@drawable/cricle_begie"
+                android:contentDescription="preview_image"
+                android:padding="8dp"
+                android:src="@drawable/placehoder" />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="add_your_background_image"
+            android:textColor="#818181"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <!-- Options section -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="background_image"
+            android:textColor="#38383a"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp">
+
+            <RadioButton
+                android:id="@+id/radioAvatars"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:buttonTint="#96b6c5"
+                android:checked="true"
+                android:text="choose_from_available_avatars"
+                android:textColor="#38383a"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radioLibrary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:buttonTint="#96b6c5"
+                android:text="choose_from_library"
+                android:textColor="#38383a"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/radioPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:buttonTint="#96b6c5"
+                android:text="take_photo"
+                android:textColor="#38383a"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

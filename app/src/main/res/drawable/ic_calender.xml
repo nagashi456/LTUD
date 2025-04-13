@@ -1,0 +1,70 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="64"
+    android:viewportHeight="64">
+
+    <!-- Nền hình vuông bo góc -->
+    <path
+        android:fillColor="#FAD6F8"
+        android:pathData="M8,4
+                          h48
+                          a4,4 0 0 1 4,4
+                          v48
+                          a4,4 0 0 1 -4,4
+                          h-48
+                          a4,4 0 0 1 -4,-4
+                          v-48
+                          a4,4 0 0 1 4,-4
+                          z" />
+
+    <!-- Phần đầu của lịch (nắp) -->
+    <path
+        android:fillColor="#6C3CF0"
+        android:pathData="M16,12
+                          h32
+                          a2,2 0 0 1 2,2
+                          v4
+                          h-36
+                          v-4
+                          a2,2 0 0 1 2,-2
+                          z
+                          M22,8
+                          a2,2 0 0 1 4,0
+                          v4
+                          h-4
+                          v-4
+                          z
+                          M38,8
+                          a2,2 0 0 1 4,0
+                          v4
+                          h-4
+                          v-4
+                          z" />
+
+    <!-- Thân lịch -->
+    <path
+        android:fillColor="#B997F0"
+        android:pathData="M12,20
+                          h40
+                          a4,4 0 0 1 4,4
+                          v28
+                          a4,4 0 0 1 -4,4
+                          h-40
+                          a4,4 0 0 1 -4,-4
+                          v-28
+                          a4,4 0 0 1 4,-4
+                          z" />
+
+    <!-- Các chấm đại diện cho ngày -->
+    <!-- Dòng 1 -->
+    <path android:fillColor="#6C3CF0" android:pathData="M20,28 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+    <path android:fillColor="#6C3CF0" android:pathData="M30,28 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+    <path android:fillColor="#6C3CF0" android:pathData="M40,28 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+
+    <!-- Dòng 2 -->
+    <path android:fillColor="#6C3CF0" android:pathData="M20,38 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+    <path android:fillColor="#6C3CF0" android:pathData="M30,38 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+    <path android:fillColor="#6C3CF0" android:pathData="M40,38 a2,2 0 1,0 4,0 a2,2 0 1,0 -4,0" />
+
+</vector>
