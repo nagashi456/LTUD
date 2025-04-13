@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="colorPrimary">#46BDF0</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#5F33E1</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="document_red">#B02929</color>
+    <color name="excel_green">#34AF45</color>
+    <color name="code_blue">#46BDF0</color>
+    <color name="text_dark">#24252C</color>
+    <color name="text_hint">#B4BDC4</color>
+    <color name="background_start">#E8F1FF</color>
+    <color name="background_end">#FFFFFF</color>
 </resources>
