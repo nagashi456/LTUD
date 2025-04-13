@@ -12,9 +12,7 @@
     <color name="text_hint">#B4BDC4</color>
     <color name="background_start">#E8F1FF</color>
     <color name="background_end">#FFFFFF</color>
-    <color name="colorPrimary">#46BDF0</color>
-    <color name="colorPrimaryDark">#5EBCE0</color>
-    <color name="colorAccent">#8DD3F7</color>
+
     <color name="colorBackground">#FFFFFF</color>
     <color name="blue">#3AAFED</color>
     <color name="gray">#757575</color>
